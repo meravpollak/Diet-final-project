@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CalendarWindow">
+    <VBox fx:id="vBox" prefHeight="421.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
+    <children>
+    <GridPane fx:id="calendar" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900" >
+            <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+        </columnConstraints>
+        <Label style="-fx-font-weight: bold; -fx-font-size: 32px; -fx-text-fill: #818181" text="יומן פגישות" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets bottom="30.0" left="150.0" />
+            </GridPane.margin>
+        </Label>
+
+        <Button fx:id="mark"  prefHeight="40.0" prefWidth="200.0" text="סימון יום חופש" onAction="#Mark" GridPane.rowIndex="4" GridPane.ColumnIndex="1"> </Button>
+
+        <Text fx:id="dateOfToday" GridPane.rowIndex="0" GridPane.ColumnIndex="6" GridPane.columnSpan="2" style="-fx-font-size: 22px">
+            <GridPane.margin>
+                <Insets left="190" top="90" />
+            </GridPane.margin>
+        </Text>
+
+        <TableView fx:id="table" id="table" GridPane.rowIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="5" GridPane.columnIndex="3" nodeOrientation="RIGHT_TO_LEFT">
+            <GridPane.margin>
+                <Insets left="240" right="200.0" bottom="30"/>
+            </GridPane.margin>
+            <columns>
+                <TableColumn text="שעה" prefWidth="120" id="hour_col" fx:id="hour_col">
+                </TableColumn>
+                <TableColumn text="שם פרטי" prefWidth="130" id="firstName_col" fx:id="firstName_col">
+                </TableColumn>
+                <TableColumn text="שם משפחה" prefWidth="130" id="lastName_col" fx:id="lastName_col">
+                </TableColumn>
+                <TableColumn text="הגיע" prefWidth="90" id="arrived_col" fx:id="checkbox_arrived_col">
+                </TableColumn>
+                <TableColumn text="חדש" prefWidth="90" id="new_col" fx:id="new_col">
+                </TableColumn>
+                <TableColumn text="טלפון" prefWidth="120" id="tel_col" fx:id="tel_col">
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <Label text="סך מוזמנים להיום: " GridPane.rowIndex="5" GridPane.ColumnIndex="6" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="150" top="90" />
+            </GridPane.margin>
+        </Label >
+
+        <Text fx:id="Totalinvented" GridPane.rowIndex="5" GridPane.ColumnIndex="6" GridPane.columnSpan="2" >
+            <GridPane.margin>
+                <Insets left="130" top="90" />
+            </GridPane.margin>
+        </Text>
+
+        <Label text="סך הכל הגיעו: " GridPane.rowIndex="5" GridPane.ColumnIndex="5" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="120" top="90" />
+            </GridPane.margin>
+        </Label >
+
+        <Text fx:id="TotalArrived" GridPane.rowIndex="5" GridPane.ColumnIndex="5" GridPane.columnSpan="2" >
+            <GridPane.margin>
+                <Insets left="100" top="90" />
+            </GridPane.margin>
+        </Text>
+
+
+        <Button fx:id="delete"  prefHeight="40.0" prefWidth="200.0" text="מחק פגישה" onAction="#deleteMeeting" GridPane.rowIndex="4" GridPane.ColumnIndex="4">
+            <GridPane.margin>
+                <Insets left="40" top="290"  />
+            </GridPane.margin>
+        </Button>
+
+
+        <VBox style="-fx-background-color: #FFDAB9" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0" GridPane.rowSpan="7">
+            <Button fx:id="btn_watch_cal" onAction="#watchcalendar" prefHeight="40.0" prefWidth="170.0" text="יומן פגישות" style="-fx-background-color: #FFccb3" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0"  />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin></Button>
+            <Button fx:id="btn_addMeeting" onAction="#Addmeeting" prefHeight="40.0" prefWidth="200.0"  text="הוספת פגישה " GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="10" />
+
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <GridPane.margin>
+                <Insets left="130.0" />
+            </GridPane.margin>
+            <VBox.margin>
+                <Insets top="2"/>
+            </VBox.margin>
+        </VBox>
+
+    </GridPane>
+    </children>
+    </VBox>
+</BorderPane>
+
+
+
+
+
+
+
+
+
+

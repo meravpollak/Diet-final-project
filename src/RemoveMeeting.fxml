@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RemoveMeeting">
+
+    <GridPane fx:id="calendar" >
+        <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+        </columnConstraints>
+        <Label style="-fx-font-weight: bold; -fx-font-size: 22px; -fx-text-fill: #818181" text="מחק פגישה" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets bottom="30.0" left="150.0" />
+            </GridPane.margin>
+        </Label>
+
+        <VBox style="-fx-background-color: #FFDAB9" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0" GridPane.rowSpan="7">
+            <Button fx:id="btn_menu_watch" onAction="#watchcalendar" prefHeight="40.0" prefWidth="170.0" text="יומן פגישות" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0"  />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin></Button>
+            <Button fx:id="btn_cardDiet" onAction="#Addmeeting"  prefHeight="40.0" prefWidth="170.0" text="הוספת פגישה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="10" />
+
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_statistics" onAction="#MarkDays" prefHeight="40.0" prefWidth="170.0" text="סימון ימים" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="130" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_invoice" onAction="#RemoveMeeting" style="-fx-background-color: #FFccb3" prefHeight="40.0" prefWidth="200.0" text="מחיקת פגישה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+
+            <GridPane.margin>
+                <Insets left="130.0" />
+            </GridPane.margin>
+            <VBox.margin>
+                <Insets top="2"/>
+            </VBox.margin>
+        </VBox>
+
+
+
+    </GridPane>
+</BorderPane>
+
+
+
+
+
+
+
+
+
+

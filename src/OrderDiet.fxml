@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.BarChart?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OrderDiet">
+    <VBox>
+    <children>
+    <GridPane fx:id="SuggestionDietGrid" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900" >
+        <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+        </columnConstraints>
+        <Label style="-fx-font-weight: bold; -fx-font-size: 32px; -fx-text-fill: #818181" text="הצגת סדר הדיאטות וממוצע הירידה בהן" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets bottom="30.0" left="0.0" />
+            </GridPane.margin>
+        </Label>
+
+        <BarChart fx:id="barChart" id="barChart" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="5" GridPane.columnSpan="6">
+            <xAxis>
+                <CategoryAxis fx:id="xAxis" side="BOTTOM" label="סדר הדיאטות" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" fx:id="yAxis" label="ממוצע ירידה במשקל"/>
+            </yAxis>
+            <GridPane.margin>
+                <Insets right="100.0" left="100.0" />
+            </GridPane.margin>
+        </BarChart>
+
+        <VBox style="-fx-background-color: #FFDAB9" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0" GridPane.rowSpan="7">
+            <Button fx:id="btn_menu_watch" onAction="#watchOnPatientDetails" prefHeight="40.0" prefWidth="170.0" text="כרטיס מטופל" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin></Button>
+            <Button fx:id="btn_cardDiet" onAction="#DietCard" prefHeight="40.0" prefWidth="170.0" text="כרטיס דיאטה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="10" />
+
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_statistics" onAction="#DietStatistics" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FFccb3" text="סטטיסטיקות " GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="130" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_invoice" onAction="#Invoices" prefHeight="40.0" prefWidth="170.0" text="חשבוניות" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_addAppointemnt" onAction="#AddAppointment" prefHeight="40.0" prefWidth="170.0" text="הוספת פגישה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <GridPane.margin>
+                <Insets left="130.0" />
+            </GridPane.margin>
+            <VBox.margin>
+                <Insets top="2" />
+            </VBox.margin>
+        </VBox>
+
+    </GridPane>
+    </children>
+    </VBox>
+</BorderPane>

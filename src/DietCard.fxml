@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.CheckBox?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DietCard">
+    <VBox fx:id="vBox" prefHeight="421.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
+    <children>
+    <GridPane fx:id="PatientDetails" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900" >
+        <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+        </columnConstraints>
+
+        <Label style="-fx-font-weight: bold; -fx-font-size: 27px; -fx-text-fill: #818181" text="כרטיס דיאטה" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets bottom="30.0" left="150.0" />
+            </GridPane.margin>
+        </Label>
+
+        <Label text="שם מטופל" GridPane.columnIndex="7" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="90.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField id = "firstName" fx:id="firstName" disable="false" alignment="CENTER" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets right="20" top="90.0" />
+            </GridPane.margin></TextField>
+
+        <Label text="משקל רצוי" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <GridPane.margin>
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="wantwieght" disable="false" prefWidth="100.0" alignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="20" />
+            </GridPane.margin></TextField>
+
+        <Label text="מצב מסת גוף" GridPane.columnIndex="5" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="90.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField id = "bodyMass" fx:id="bodyMass" disable="false" alignment="CENTER" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+        <GridPane.margin>
+            <Insets right="20" top="90.0" />
+        </GridPane.margin></TextField>
+
+        <TextField id = "howmuchBodymass" fx:id="howmuchBodymass" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets right="20" top="90.0" />
+            </GridPane.margin></TextField>
+
+        <Label text="צריכת קלוריות יומית" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <GridPane.margin>
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="calories" disable="false" alignment="CENTER" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="20" />
+            </GridPane.margin></TextField>
+
+
+
+        <TableView id="table" fx:id="table" GridPane.rowIndex="1"  GridPane.rowSpan="5" GridPane.columnSpan="6" GridPane.columnIndex="1" nodeOrientation="RIGHT_TO_LEFT">
+            <GridPane.margin>
+                <Insets left="30" right="0.0" top="80" bottom="105" />
+            </GridPane.margin>
+            <columns>
+                <TableColumn text="טיפול" prefWidth="100" id="treat_col" fx:id="treat_col" >
+                </TableColumn>
+                <TableColumn text="שבוע" prefWidth="100" id="week_col" fx:id="week_col">
+                </TableColumn>
+                <TableColumn text="תאריך" prefWidth="150" id="date_col" fx:id="date_col">
+                </TableColumn>
+                <TableColumn text="הגיע" prefWidth="100" id="arrived_col" fx:id="arrived_col">
+                </TableColumn>
+                <TableColumn text="משקל" prefWidth="120" id="weight_col" fx:id="weight_col">
+                </TableColumn>
+                <TableColumn text="שינוי במשקל" prefWidth="120" id="weight_diff_col" fx:id="weight_diff_col">
+                </TableColumn>
+                <TableColumn text="דיאטה" prefWidth="110" id="diet_col" fx:id="diet_col">
+                </TableColumn>
+                <TableColumn text="מס ימים" prefWidth="100" id="days_col" fx:id="days_col">
+                </TableColumn>
+                <TableColumn text="פרטי דיאטה" prefWidth="120" id="marks_col" fx:id="dietDetails_col">
+                </TableColumn>
+                <TableColumn text="הערות" prefWidth="150" id="marks_col" fx:id="marks_col">
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <TextField fx:id="treat_add" id="treat_add" promptText="טיפול" alignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="5">
+            <GridPane.margin>
+                <Insets left="120.0" right="0" />
+            </GridPane.margin>
+        </TextField>
+
+        <TextField fx:id="week_add" id="week_add" promptText="שבוע" alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="220.0" right="100" />
+            </GridPane.margin>
+        </TextField>
+
+        <DatePicker fx:id="date_add" id="date_add" promptText="תאריך" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="40.0" right="210" />
+            </GridPane.margin>
+        </DatePicker>
+
+        <CheckBox fx:id="arrived_add" id="arrived_add" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="180.0" right="00" />
+            </GridPane.margin>
+        </CheckBox>
+
+        <TextField fx:id="weight_add" id="weight_add" promptText="משקל" alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.columnSpan="3" >
+            <GridPane.margin>
+                <Insets left="270.0" right="250" />
+            </GridPane.margin>
+        </TextField>
+
+        <TextField fx:id="diet_add" id="diet_add" promptText="דיאטה" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="180.0" right="120" />
+            </GridPane.margin>
+        </TextField>
+
+        <TextField fx:id="days_add" id="days_add" promptText="מס ימים" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.columnSpan="3">
+            <GridPane.margin>
+                <Insets left="70.0" right="450" />
+            </GridPane.margin>
+        </TextField>
+
+
+
+        <TextField fx:id="marks_add" id="marks_add" promptText="הערות" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="110.0" right="150" />
+            </GridPane.margin>
+        </TextField>
+
+        <Button GridPane.columnIndex="1" GridPane.rowIndex="5" text="הוסף" textAlignment="CENTER" onAction="#addNewCycle">
+            <GridPane.margin>
+                <Insets left="30.0" right="0" />
+            </GridPane.margin>
+        </Button>
+
+        <Button fx:id="addNewDiet" prefWidth="140" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.columnSpan="3" text="דיאטה אישית" textAlignment="CENTER" onAction="#addNewDiet">
+            <GridPane.margin>
+                <Insets left="110.0" right="0" />
+            </GridPane.margin>
+        </Button>
+
+        <Button GridPane.columnIndex="2" GridPane.rowIndex="6" prefHeight="40.0" prefWidth="250.0" GridPane.columnSpan="3" text=" הצג כרטיס דיאטה כגרף" textAlignment="CENTER" onAction="#showasGraph">
+            <GridPane.margin>
+                <Insets left="180.0" right="0" bottom="50" />
+            </GridPane.margin>
+        </Button>
+
+
+        <Button GridPane.columnIndex="1" GridPane.rowIndex="6" prefHeight="40.0" prefWidth="170.0" GridPane.columnSpan="2" text="הורד מחזור אחרון" textAlignment="CENTER" onAction="#removeLastCycle">
+            <GridPane.margin>
+                <Insets left="180.0" right="0" bottom="50" />
+            </GridPane.margin>
+        </Button>
+
+        <Button fx:id="btn_cancel" onAction="#printgraph" prefHeight="40.0" prefWidth="150.0" text="הדפסת גרף" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets bottom="50.0" left="100.0" />
+            </GridPane.margin></Button>
+
+
+
+        <VBox style="-fx-background-color: #FFDAB9" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0" GridPane.rowSpan="7">
+            <Button fx:id="btn_menu_watch" onAction="#watchOnPatientDetails" prefHeight="40.0" prefWidth="170.0" text="כרטיס מטופל" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0"  />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin></Button>
+            <Button fx:id="btn_cardDiet" onAction="#DietCard" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #FFccb3" text="כרטיס דיאטה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="10" />
+
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_statistics" onAction="#DietStatistics" prefHeight="40.0" prefWidth="200.0" text="סטטיסטיקות " GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="130" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_invoice" onAction="#Invoices" prefHeight="40.0" prefWidth="200.0" text="חשבוניות" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_addAppointemnt" onAction="#AddAppointment" prefHeight="40.0" prefWidth="200.0" text="הוספת פגישה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2"/>
+                </VBox.margin>
+            </Button>
+            <GridPane.margin>
+                <Insets left="130.0" />
+            </GridPane.margin>
+            <VBox.margin>
+                <Insets top="2"/>
+            </VBox.margin>
+        </VBox>
+
+    </GridPane>
+    </children>
+    </VBox>
+
+</BorderPane>

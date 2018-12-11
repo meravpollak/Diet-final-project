@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeopleUnderMem">
+    <VBox>
+    <children>
+    <GridPane fx:id="RecievableReports" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900" >
+        <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+        </columnConstraints>
+
+        <Label text="הצגת אנשים מתחת לממוצע באחוזון ה25" GridPane.columnIndex="4" GridPane.columnSpan="4" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 32px; -fx-text-fill: #818181">
+            <GridPane.margin>
+                <Insets left="180" top="40" />
+            </GridPane.margin>
+        </Label>
+
+        <Label text="בחר שבוע: " GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin></Label>
+        <TextField fx:id="week_textfield" disable="false" prefWidth="240.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="30" left="0"/>
+            </GridPane.margin></TextField>
+        <Button fx:id="ChooseWeek"  text="בחר" onAction="#showPeopleUnderMem" disable="false" prefWidth="240.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="30" left="100.0"/>
+            </GridPane.margin></Button>
+
+        <TableView id="table" fx:id="table" GridPane.rowIndex="2"  GridPane.rowSpan="6" GridPane.columnSpan="8" GridPane.columnIndex="0" nodeOrientation="RIGHT_TO_LEFT">
+            <GridPane.margin>
+                <Insets left="200" right="300.0" top="50" bottom="140"/>
+            </GridPane.margin>
+            <columns>
+                <TableColumn text="תז" prefWidth="200" id="id_col" fx:id="id_col">
+                </TableColumn>
+                <TableColumn text="שם פרטי" prefWidth="150" id="firstName_col" fx:id="firstName_col">
+                </TableColumn>
+                <TableColumn text="שם משפחה" prefWidth="200" id="lastName_col" fx:id="lastName_col">
+                </TableColumn>
+                <TableColumn text="מין" prefWidth="150" id="sex_col" fx:id="sex_col">
+                </TableColumn>
+                <TableColumn text="טלפון" prefWidth="200" id="tel_col" fx:id="tel_col">
+                </TableColumn>
+                <TableColumn text="תאריך לידה" prefWidth="200" id="birthday_col" fx:id="birthday_col">
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <VBox style="-fx-background-color: #FFDAB9" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0" GridPane.rowSpan="7">
+            <Button fx:id="btn_menu_watch" onAction="#watchOnPatientDetails" prefHeight="40.0" prefWidth="170.0" text="כרטיס מטופל" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin></Button>
+            <Button fx:id="btn_cardDiet" onAction="#DietCard" prefHeight="40.0" prefWidth="170.0" text="כרטיס דיאטה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="10" />
+
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_statistics" onAction="#DietStatistics" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FFccb3" text="סטטיסטיקות " GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="130" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_invoice" onAction="#Invoices" prefHeight="40.0" prefWidth="170.0" text="חשבוניות" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="btn_addAppointemnt" onAction="#AddAppointment" prefHeight="40.0" prefWidth="170.0" text="הוספת פגישה" GridPane.columnIndex="7" GridPane.columnSpan="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="0" top="0" />
+                </GridPane.margin>
+                <VBox.margin>
+                    <Insets top="2" />
+                </VBox.margin>
+            </Button>
+            <GridPane.margin>
+                <Insets left="130.0" />
+            </GridPane.margin>
+            <VBox.margin>
+                <Insets top="2" />
+            </VBox.margin>
+        </VBox>
+
+    </GridPane>
+    </children>
+    </VBox>
+</BorderPane>

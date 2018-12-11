@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReceivableReports">
+    <VBox>
+    <children>
+    <GridPane fx:id="RecievableReports" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900" >
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+        </columnConstraints>
+
+        <Label text="דוחות חייבים" GridPane.columnIndex="3" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-font-size: 27px; -fx-text-fill: #818181">
+            <GridPane.margin>
+                <Insets left="170" top="40" />
+            </GridPane.margin>
+        </Label>
+
+        <Label text="מתאריך    " GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin></Label>
+        <DatePicker fx:id="fromDate" disable="false" prefWidth="240.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="0" left="150.0"/>
+            </GridPane.margin></DatePicker>
+        <Label text="עד תאריך       " GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="0.0" />
+            </GridPane.margin></Label>
+        <DatePicker fx:id="UntilDate" disable="false" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="0" left="150.0"/>
+            </GridPane.margin></DatePicker>
+        <Button fx:id="btn_search" alignment="CENTER" contentDisplay="CENTER" onAction="#showReceivableReports" prefHeight="40.0" GridPane.columnSpan="2" prefWidth="90.0" text="חפש" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="350.0" />
+            </GridPane.margin></Button>
+        <Button fx:id="btn_print" onAction="#printReceivableReports" prefHeight="40.0" prefWidth="100.0" text="הדפסה" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.columnSpan="2">
+            <GridPane.margin>
+                <Insets left="0.0" top="100"/>
+            </GridPane.margin></Button>
+
+        <TableView id="table" fx:id="table" GridPane.rowIndex="2"  GridPane.rowSpan="3" GridPane.columnSpan="4" GridPane.columnIndex="0" nodeOrientation="RIGHT_TO_LEFT">
+            <GridPane.margin>
+                <Insets left="200" right="200.0" top="50" bottom="140"/>
+            </GridPane.margin>
+            <columns>
+                <TableColumn text="תז" prefWidth="200" id="id_col" fx:id="id_col">
+                </TableColumn>
+                <TableColumn text="שם פרטי" prefWidth="200" id="firstName_col" fx:id="firstName_col">
+                </TableColumn>
+                <TableColumn text="שם משפחה" prefWidth="200" id="lastName_col" fx:id="lastName_col">
+                </TableColumn>
+                <TableColumn text="סך הכל חובה" prefWidth="200" id="pay_col" fx:id="pay_col">
+                </TableColumn>
+                <TableColumn text="תאריך" prefWidth="200" id="date_col" fx:id="date_col">
+                </TableColumn>
+                <TableColumn text="טלפון" prefWidth="200" id="tel_col" fx:id="tel_col">
+                </TableColumn>
+                </columns>
+        </TableView>
+
+    </GridPane>
+    </children>
+    </VBox>
+
+</BorderPane>
+

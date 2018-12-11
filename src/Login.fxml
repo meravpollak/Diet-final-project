@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.text.Text?>
+<BorderPane  fx:id="border" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login">
+
+    <top>
+        <VBox id="toptitle" prefHeight="150.0" prefWidth="150.0" spacing="5.0"  style=" -fx-background-color: #FFDAB9" BorderPane.alignment="CENTER">
+        <GridPane id="Grid" BorderPane.alignment="CENTER"  >
+            <rowConstraints>
+                <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150" vgrow="ALWAYS" />
+            </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+
+            <Text fx:id="mainLabel" style="-fx-fill: #696969" id="mainLabel" text=" חרמון מן" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="1220.0" />
+                </GridPane.margin>
+            </Text>
+            <ImageView fitHeight="100" fitWidth="100">
+                <image>
+                    <Image url="hermon.png" />
+                </image>
+                <GridPane.margin>
+                    <Insets left="1050.0" top="0.0" />
+                </GridPane.margin>
+            </ImageView>
+        </GridPane>
+        </VBox>
+    </top>
+    <center>
+    <VBox fx:id="vBox" prefHeight="421.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
+    <children>
+    <GridPane id="Grid" BorderPane.alignment="CENTER" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900">
+            <rowConstraints>
+                <RowConstraints maxHeight="120.0" minHeight="70.0" prefHeight="120" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="400.0" minHeight="450.0" prefHeight="400.0" vgrow="ALWAYS" />
+            </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" />
+        </columnConstraints>
+
+            <Label text="שם משתמש:       " style="-fx-font-size: 30px; " GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="3">
+         <GridPane.margin>
+            <Insets left="30.0" top="20.0" />
+         </GridPane.margin></Label>
+
+        <TextField fx:id="UserName" style="-fx-font-size: 22px" alignment="TOP_CENTER" disable="false" prefHeight="47.0" GridPane.rowSpan="3" prefWidth="293.0" promptText="שם משתמש            " GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets left="120.0" top="20.0" />
+            </GridPane.margin></TextField>
+
+
+            <Label text="סיסמה:          " style="-fx-font-size: 30px" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="35.0" top="100"/>
+         </GridPane.margin></Label>
+
+            <PasswordField fx:id="Password" style="-fx-font-size: 22px" alignment="TOP_CENTER" prefHeight="140" disable="false" prefWidth="100.0" promptText="סיסמה           " GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="120.0" top="150" bottom="50"/>
+         </GridPane.margin></PasswordField>
+
+
+            <Button fx:id="btn_connect" onAction="#connect" prefHeight="60.0" prefWidth="140.0" text="התחברות" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-font-size: 22px">
+         <GridPane.margin>
+            <Insets bottom="270.0" left="200.0" />
+         </GridPane.margin></Button>
+               <padding>
+                  <Insets left="210.0" />
+               </padding>
+        </GridPane>
+    </children>
+    </VBox>
+    </center>
+</BorderPane>

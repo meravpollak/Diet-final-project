@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddNewPatient">
+    <VBox>
+    <children>
+    <GridPane fx:id="AddNewPatient" style="-fx-background-image:url('pic.png'); fx-background-repeat: stretch;-fx-background-size: 1600 900" >
+        <rowConstraints>
+            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+        </columnConstraints>
+
+        <Label style="-fx-font-weight: bold; -fx-font-size: 27px; -fx-text-fill: #818181" text="הוספת מטופל" GridPane.columnIndex="7" GridPane.rowIndex="0" >
+        <GridPane.margin>
+            <Insets bottom="30.0" left="10" />
+        </GridPane.margin>
+    </Label>
+        <Label text="תז מטופל" GridPane.columnIndex="7" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="90.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="UserID" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="0" alignment="CENTER">
+            <GridPane.margin>
+                <Insets top="90.0" right="20" />
+            </GridPane.margin></TextField>
+
+
+        <Label text="שם פרטי" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <GridPane.margin>
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="firstName" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="1" alignment="CENTER">
+            <GridPane.margin>
+                <Insets right="20" />
+            </GridPane.margin></TextField>
+
+        <Label text="שם משפחה" GridPane.columnIndex="7" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="80" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="lastName" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets right="20" bottom="80" />
+            </GridPane.margin></TextField>
+
+        <Label text="כתובת" GridPane.columnIndex="7" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="40" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="address" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="40" right="20" />
+            </GridPane.margin></TextField>
+
+        <Label text="עיר" GridPane.columnIndex="7" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets bottom="40"/>
+            </GridPane.margin>
+        </Label>
+        <ListView fx:id="city" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets right="20" bottom="50" top="20" />
+            </GridPane.margin></ListView>
+
+        <Label text="טלפון" GridPane.columnIndex="7" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets top="70"/>
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="tel" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets right="20" top="70" />
+            </GridPane.margin></TextField>
+
+        <Label text="אימייל" GridPane.columnIndex="7" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets  bottom="20" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="email" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets right="20" bottom="20"/>
+            </GridPane.margin></TextField>
+
+        <Label text="תאריך לידה" GridPane.columnIndex="7" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets top="90" />
+            </GridPane.margin>
+        </Label>
+        <DatePicker fx:id="birthDay" disable="false" prefWidth="180.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets right="20" top="90"/>
+            </GridPane.margin></DatePicker>
+
+        <Label text="מין" GridPane.columnIndex="5" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="90.0"/>
+            </GridPane.margin>
+        </Label>
+        <ListView fx:id="sex" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets right="20" top="90.0"/>
+            </GridPane.margin></ListView>
+
+        <Label text="מצב משפחתי" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <GridPane.margin>
+            </GridPane.margin>
+        </Label>
+        <ListView fx:id="familyStatus" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="20" bottom="30" top="30" />
+            </GridPane.margin></ListView>
+
+        <Label text="גיל" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="80" />
+            </GridPane.margin>
+        </Label>
+        <TextField alignment="CENTER" fx:id="age" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets right="20" bottom="80" />
+            </GridPane.margin></TextField>
+
+        <Label text="מקצוע" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="40" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="job" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="40" right="20" />
+            </GridPane.margin></TextField>
+
+        <Label text="תאריך פתיחת כרטיס" GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets bottom="40"/>
+            </GridPane.margin>
+        </Label>
+        <DatePicker fx:id="dateOpenedCard" disable="false" prefWidth="180.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets right="0" bottom="40" />
+            </GridPane.margin></DatePicker>
+
+        <Label text="משקל נוכחי" GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets top="70"/>
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="currentWeight" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets right="20" top="70" />
+            </GridPane.margin></TextField>
+
+        <Label text="משקל גבוה בעבר" GridPane.columnIndex="5" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets  bottom="20" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="pastHighestWeight" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets right="20" bottom="20"/>
+            </GridPane.margin></TextField>
+
+        <Label text="גובה" GridPane.columnIndex="5" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets top="90" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="height" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets right="20" top="90"/>
+            </GridPane.margin></TextField>
+
+        <Label text="משקל" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="90.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="weight" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets top="90.0" right="20" />
+            </GridPane.margin></TextField>
+
+
+        <Label text="רופא מטפל" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <GridPane.margin>
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="doctor" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="20" />
+            </GridPane.margin></TextField>
+
+        <Label text="משקל התחלתי למחזור" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="80" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="startweightCycle" alignment="CENTER" disable="false" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets right="20" bottom="80" />
+            </GridPane.margin></TextField>
+
+        <Label text="מחלות" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets top="40" />
+            </GridPane.margin>
+        </Label>
+
+        <ListView fx:id="diseases" disable="false" prefWidth="70.0" GridPane.columnIndex="2" GridPane.columnSpan="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets right="20" bottom="20" top="50" />
+            </GridPane.margin></ListView>
+
+        <Label text="הערות" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets bottom="30" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="marks" disable="false" alignment="CENTER" prefWidth="100.0" prefHeight="100.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets right="20" bottom="30" top="20" />
+            </GridPane.margin></TextField>
+
+        <Button fx:id="btn_submit" onAction="#submit" prefHeight="100.0" prefWidth="100.0" text="אישור" GridPane.columnIndex="0" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets left="100.0" bottom="35.0" top="25" />
+            </GridPane.margin></Button>
+
+    </GridPane>
+    </children>
+    </VBox>
+
+</BorderPane>
